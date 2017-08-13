@@ -2,8 +2,9 @@
   "name": "programa1-pruebas",
   "version": "0.1.0",
   "description": "Pruebas de Software, Programa 1 Usando TDD",
-  "main": "index.js",
+  "main": "./config/index.js",
   "scripts": {
+    "start": "node ./config/index.js",
     "test": "node ./node_modules/mocha/bin/mocha"
   },
   "repository": {

@@ -2,5 +2,11 @@
 
 Proyecto uno de la materia pruebas de software...
 
-- Recordar: npm install
-- Para correr las pruebas: npm test
+## Uso
+- Recordar: **npm install**
+- Para iniciar el servidor: **npm start**
+- Para correr las pruebas: **npm test**
+
+
+
+[Guia de markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
