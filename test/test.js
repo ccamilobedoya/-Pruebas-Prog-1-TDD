@@ -7,7 +7,7 @@ const expect = require('chai').expect;
 // Describe es el que cosa estamos probando
 describe('El modulo servidor', () => {
   // It es que parte especifica es lo que se prueba
-  it('Debe exportar una funcion de inicio', () => {
+  it('Deberia exportar una funcion de inicio', () => {
     // Assert
     expect(server.startserver).to.be.a('function');
   });

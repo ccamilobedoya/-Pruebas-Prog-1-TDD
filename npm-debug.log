@@ -1,0 +1,28 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\ProgramData\\chocolatey\\lib\\npm\\tools\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'start' ]
+2 info using npm@1.4.9
+3 info using node@v7.2.1
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info prestart programa1-pruebas@0.1.0
+6 info start programa1-pruebas@0.1.0
+7 verbose unsafe-perm in lifecycle true
+8 info programa1-pruebas@0.1.0 Failed to exec start script
+9 error programa1-pruebas@0.1.0 start: `node ./config/index.js`
+9 error Exit status 1
+10 error Failed at the programa1-pruebas@0.1.0 start script.
+10 error This is most likely a problem with the programa1-pruebas package,
+10 error not with npm itself.
+10 error Tell the author that this fails on your system:
+10 error     node ./config/index.js
+10 error You can get their info via:
+10 error     npm owner ls programa1-pruebas
+10 error There is likely additional logging output above.
+11 error System Windows_NT 10.0.15063
+12 error command "C:\\Program Files\\nodejs\\node.exe" "C:\\ProgramData\\chocolatey\\lib\\npm\\tools\\node_modules\\npm\\bin\\npm-cli.js" "start"
+13 error cwd D:\Users\Ente\Documents\Pruebas de Software\Pruebas-Prog-1-TDD
+14 error node -v v7.2.1
+15 error npm -v 1.4.9
+16 error code ELIFECYCLE
+17 verbose exit [ 1, true ]
