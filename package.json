@@ -1,0 +1,28 @@
+{
+  "name": "programa1-pruebas",
+  "version": "0.1.0",
+  "description": "Pruebas de Software, Programa 1 Usando TDD",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha lib/**/**.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ccamilobedoya/Pruebas-Prog-1-TDD.git"
+  },
+  "keywords": [
+    "TDD",
+    "Test",
+    "Node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccamilobedoya/Pruebas-Prog-1-TDD/issues"
+  },
+  "homepage": "https://github.com/ccamilobedoya/Pruebas-Prog-1-TDD",
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
