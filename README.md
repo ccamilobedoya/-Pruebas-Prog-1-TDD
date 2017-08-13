@@ -2,4 +2,5 @@
 
 Proyecto uno de la materia pruebas de software...
 
-- Recordar "npm install"
+- Recordar: npm install
+- Para correr las pruebas: npm test
