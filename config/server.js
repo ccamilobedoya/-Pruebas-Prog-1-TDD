@@ -13,11 +13,8 @@ function start(route, handle) {
     console.log("foo: " + params);
 
     // route es una funcion pasada por parametro, handle un objeto
-    route(pathname, handle);
-
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Hello World");
-    response.end();
+    // response es el mismo del servidor, asi que router se encargara
+    route(pathname, handle, response);  
   }
 
   http.createServer(onRequest).listen(port);

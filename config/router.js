@@ -1,10 +1,15 @@
-function route(pathname, handle) {
+function route(pathname, handle, response) {
   console.log("About to route to: " + pathname);
   // Si handle para la ruta especifica es una funcion, ejecutela
   if (typeof handle[pathname] === 'function') {
-    handle[pathname]();
+    // El handle adecuado mostrara la respuesta adecuada
+    handle[pathname](response);
   } else {
+    // La ruta no es valida con las especificadas en index.js
     console.log("No request handler found for " + pathname);
+    response.writeHead(404, {"Content-Type": "text/plain"});
+    response.write("404 WTF r u doin'?");
+    response.end();
   }
 }
 
