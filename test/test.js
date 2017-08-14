@@ -1,5 +1,5 @@
-const server = require('../server');
-const expect = require('chai').expect;
+const server = require('../config/server');
+const chai = require('chai');
 
 // El () => {} es equivalente a: function () { }
 
@@ -9,6 +9,6 @@ describe('El modulo servidor', () => {
   // It es que parte especifica es lo que se prueba
   it('Deberia exportar una funcion de inicio', () => {
     // Assert
-    expect(server.startserver).to.be.a('function');
+    chai.expect(server.startserver).to.be.a('function');
   });
 });
