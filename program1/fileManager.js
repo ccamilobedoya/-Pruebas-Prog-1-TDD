@@ -1,5 +1,6 @@
 var formidable = require('formidable');
 var util = require('util');
+var fs = require('fs');
 
 function handleUpload(request, response) {
   if (request.method.toLowerCase() == 'post'){
@@ -16,9 +17,11 @@ function handleUpload(request, response) {
       response.write('received upload:\n\n');
       response.end(util.inspect({fields: fields, files: files}));
     });
-    /*form.on('error', function(err) {
-      console.log('Error critico', err);
-    });*/
+    form.on('file', function(name, file) {
+      fs.rename(form.uploadDir + '/' + file.name, form.uploadDir + '/numeros.txt', function(err) {
+        if ( err ) console.log('ERROR: ' + err);
+      });
+    });
   }
 }
 
