@@ -23,6 +23,7 @@ function upload(request, response) {
     var form = new formidable.IncomingForm();
     form.encoding = 'utf-8';
     form.uploadDir = "./temp";
+    form.keepExtensions = true;
 
     form.parse(request, function(err, fields, files) {
       response.writeHead(200, {'content-type': 'text/plain'});
