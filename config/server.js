@@ -14,7 +14,7 @@ function start(route, handle) {
 
     // route es una funcion pasada por parametro, handle un objeto
     // response es el mismo del servidor, asi que router se encargara
-    route(pathname, handle, response);  
+    route(pathname, handle, request, response);  
   }
 
   http.createServer(onRequest).listen(port);
