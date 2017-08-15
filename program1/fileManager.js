@@ -31,11 +31,13 @@ function handleUpload(request, response) {
             } else {
               // Si todo sale bien, convierta los datos y se retorna en arr
             parseFile(data, response, function(arr) {
-              console.log('\nData Array:\n');
+
                 calcular.calcularMedia(arr, response, function(media){
                     calcular.calcularDesviacion(arr, media, response, function(desviacion){
                       response.writeHead(200, {'content-type': 'text/plain'});
                       response.write(data);
+                      console.log('|Media 1: ' +media[0].toFixed(2) + '| | Desviacion estandar 1: ' +desviacion[0].toFixed(2)+ '|');
+                      console.log('|Media 2: ' +media[1].toFixed(2) + ' | | Desviacion estandar 2: ' +desviacion[1].toFixed(2)+ ' |');
                       response.end();
                     });
                 });

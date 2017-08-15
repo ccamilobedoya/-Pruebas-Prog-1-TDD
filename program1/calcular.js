@@ -19,7 +19,7 @@ function calcularMedia (arr, response, callback) {
 
 
 function calcularDesviacion (arr, arr2, response, callback) {
-  var desviacion = [0,1];
+  var desviacion = [];
 
   for (i = 0; i < arr[0].length; i++) {
     var aux1 =0;
@@ -35,7 +35,7 @@ function calcularDesviacion (arr, arr2, response, callback) {
     }
     aux1=sum/(arr.length-1);
     aux2= math.sqrt(aux1);
-    console.log(aux2);
+    desviacion[i]=aux2;
   }
 
   // Asi se retorna el objeto en donde se llama
