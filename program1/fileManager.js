@@ -3,6 +3,7 @@ var util = require('util');
 var fs = require('fs');
 var path = require('path');
 var calcular = require('./calcular');
+
 function handleUpload(request, response) {
   if (request.method.toLowerCase() == 'post'){
     // Documentacion de formidable
@@ -68,7 +69,6 @@ function parseFile (data, response, callback) {
   // Asi se retorna el objeto en donde se llama
   callback(arr);
 }
-
 
 exports.handleUpload = handleUpload;
 exports.parseFile = parseFile;

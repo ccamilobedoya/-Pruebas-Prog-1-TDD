@@ -8,6 +8,7 @@ describe('El modulo Gestor de Archivos', () => {
   it('Deberia tener una funcion que controle los datos dentro del archivo .csv', () => {
     chai.expect(fileManager.parseFile).to.be.a('function');
   });
+
   describe('Al obtener el archivo .csv', function() {
     it ('Se debe retornar una matriz', function() {
       var data;
@@ -28,4 +29,7 @@ describe('El modulo Gestor de Archivos', () => {
       chai.expect(data).to.be.an('array').that.is.not.empty;
     });
   });
+  /*it('Deberia contener un array para calcular la media y la desviación estandar', () => {
+    chai.expect(fileManager.parseFile).to.be.a('array');
+  });*/
 });
