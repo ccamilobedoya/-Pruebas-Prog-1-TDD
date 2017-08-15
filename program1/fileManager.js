@@ -31,15 +31,15 @@ function handleUpload(request, response) {
               console.log('Error readig file ' + err);
             } else {
               // Si todo sale bien, convierta los datos y se retorna en arr
-            parseFile(data, response, function(arr) {
+            parseFile(data, function(arr) {
 
-                calcular.calcularMedia(arr, response, function(media){
-                    calcular.calcularDesviacion(arr, media, response, function(desviacion){
-                      response.writeHead(200, {'content-type': 'text/plain'});
-                      response.write(data);
+                calcular.calcularMedia(arr, function(media){
+                    calcular.calcularDesviacion(arr, media, function(desviacion){
+                      //response.writeHead(200, {'content-type': 'text/plain'});
+                    //  response.write(data);
                       console.log('|Media 1: ' +media[0].toFixed(2) + '| | Desviacion estandar 1: ' +desviacion[0].toFixed(2)+ '|');
                       console.log('|Media 2: ' +media[1].toFixed(2) + ' | | Desviacion estandar 2: ' +desviacion[1].toFixed(2)+ ' |');
-                      response.end();
+                      //response.end();
                     });
                 });
               });
@@ -52,7 +52,7 @@ function handleUpload(request, response) {
 }
 
 // Convierte a matriz, data es el input y el parametro del callback tiene el array
-function parseFile (data, response, callback) {
+function parseFile (data, callback) {
   var arr = [];
   data = data.trim();
   var lines = data.split(/\r\n|\r|\n/);

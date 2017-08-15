@@ -1,6 +1,6 @@
 var math = require('mathjs');
 
-function calcularMedia (arr, response, callback) {
+function calcularMedia (arr, callback) {
   var media = [];
   var aux =0;
   for (i = 0; i < arr[0].length; i++) {
@@ -18,7 +18,7 @@ function calcularMedia (arr, response, callback) {
 }
 
 
-function calcularDesviacion (arr, arr2, response, callback) {
+function calcularDesviacion (arr, arr2, callback) {
   var desviacion = [];
 
   for (i = 0; i < arr[0].length; i++) {
