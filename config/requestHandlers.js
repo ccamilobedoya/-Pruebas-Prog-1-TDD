@@ -6,7 +6,7 @@ function start(request, response) {
   // Formulario con campo de subir archivo
   response.write(
   '<form action="/upload" enctype="multipart/form-data" method="post">'+
-   '<input type="text" name="title"><br>'+
+   '<p>Ingrese el archivo csv</p>'+
    '<input type="file" name="upload" multiple="multiple"><br>'+
    '<input type="submit" value="Upload">'+
   '</form>'
