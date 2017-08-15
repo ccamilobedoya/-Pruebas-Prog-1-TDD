@@ -2,7 +2,7 @@ var formidable = require('formidable');
 var util = require('util');
 var fs = require('fs');
 var path = require('path');
-
+var calcular = require('./calcular');
 function handleUpload(request, response) {
   if (request.method.toLowerCase() == 'post'){
     // Documentacion de formidable
@@ -15,9 +15,7 @@ function handleUpload(request, response) {
 
     // Recibe el archivo enviado por post
     form.parse(request, function(err, fields, files) {
-      response.writeHead(200, {'content-type': 'text/plain'});
-      response.write('Contenido Subido\n\n');
-      response.end(util.inspect({fields: fields, files: files}));
+
     });
     // Cuando termina de subir el archivo, le cambia el nombre
     form.on('file', function(name, file) {
@@ -32,13 +30,15 @@ function handleUpload(request, response) {
               console.log('Error readig file ' + err);
             } else {
               // Si todo sale bien, convierta los datos y se retorna en arr
-              parseFile(data, function(arr) {
-                console.log('\nData Array:\n');
-                console.log(arr);
-                // leer datos asi: arr[1][1];
-
-  /////////////////// AQUI LLAMAR AL METODO DE CALUCLAR
-
+            parseFile(data, response, function(arr) {
+              console.log('\nData Array:\n');
+                calcular.calcularMedia(arr, response, function(media){
+                    calcular.calcularDesviacion(arr, media, response, function(desviacion){
+                      response.writeHead(200, {'content-type': 'text/plain'});
+                      response.write(data);
+                      response.end();
+                    });
+                });
               });
             }
           })
@@ -49,7 +49,7 @@ function handleUpload(request, response) {
 }
 
 // Convierte a matriz, data es el input y el parametro del callback tiene el array
-function parseFile (data, callback) {
+function parseFile (data, response, callback) {
   var arr = [];
   data = data.trim();
   var lines = data.split(/\r\n|\r|\n/);
@@ -66,6 +66,7 @@ function parseFile (data, callback) {
   // Asi se retorna el objeto en donde se llama
   callback(arr);
 }
+
 
 exports.handleUpload = handleUpload;
 exports.parseFile = parseFile;
