@@ -35,11 +35,15 @@ function handleUpload(request, response) {
 
                 calcular.calcularMedia(arr, function(media){
                     calcular.calcularDesviacion(arr, media, function(desviacion){
-                      //response.writeHead(200, {'content-type': 'text/plain'});
-                    //  response.write(data);
+                      response.writeHead(200, {'content-type': 'text/plain'});
+                      response.write(data + '\n\n' +
+                        '|Media 1: ' +media[0].toFixed(2) + '| | Desviacion estandar 1: ' +desviacion[0].toFixed(2)+ '|' +
+                        '\n' +
+                        '|Media 2: ' +media[1].toFixed(2) + ' | | Desviacion estandar 2: ' +desviacion[1].toFixed(2)+ ' |'
+                      );
                       console.log('|Media 1: ' +media[0].toFixed(2) + '| | Desviacion estandar 1: ' +desviacion[0].toFixed(2)+ '|');
                       console.log('|Media 2: ' +media[1].toFixed(2) + ' | | Desviacion estandar 2: ' +desviacion[1].toFixed(2)+ ' |');
-                      //response.end();
+                      response.end();
                     });
                 });
               });
