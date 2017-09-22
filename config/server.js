@@ -1,7 +1,7 @@
 var http = require('http');
 var url = require('url');
 var querystring = require('querystring');
-var port = 8888;
+var port = process.env.PORT || 8888;
 
 function start(route, handle) {
   function onRequest(request, response) {
